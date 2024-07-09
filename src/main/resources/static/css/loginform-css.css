@@ -1,0 +1,97 @@
+/*實現登入註冊視窗*/
+
+.login{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    margin-left: 53%;
+    margin-top: 100px;
+    background-color: rgb(45, 68, 68);
+    border-radius: 20%;
+    opacity: 95%;
+    position: absolute;
+    z-index: 999;
+}
+
+.closediv{
+    height: auto;
+    width: auto;
+}
+.closediv a{
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    opacity: 60%;
+    font-weight: 200;
+}
+.closediv a:hover{
+    opacity: 100%;
+    font-weight: 200;
+    transition-duration: .5s;
+}
+.userdiv{
+    width: auto;
+    height: 50px;
+    padding-top: 65px;
+    /*background-color: gold;*/
+}
+.userdiv input{
+    height: 25px;
+    text-align: center;
+    font-weight: 200;
+}
+.pwddiv{
+    width: auto;
+    height: 50px;
+
+    /*background-color: gold;*/
+}
+.pwddiv input{
+    height: 25px;
+    text-align: center;
+    font-weight: 200;
+}
+.buttondiv{
+    display:flex;
+    justify-content: center;
+}
+.logindiv{
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 7px;
+}
+.logindiv a {
+    line-height: 25px;
+    height: 25px;
+    font-size: 15px;
+    color: darkcyan;
+    text-decoration: none;
+    font-weight: 900;
+}
+.logindiv:hover {
+    background-color: rgb(195, 194, 194);
+    transition-duration: .5s;
+}
+.signindiv{
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+.signindiv a{
+    line-height: 25px;
+    height: 25px;
+    font-size: 15px;
+    color: darkcyan;
+    text-decoration: none;
+    font-weight: 900;
+}
+.signindiv:hover {
+    background-color: rgb(195, 194, 194);
+    transition-duration: .5s;
+}

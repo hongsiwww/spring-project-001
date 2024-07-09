@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;600;900&display=swap">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+    <style>
+        
+        /*css reset*/
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Serif TC', serif;
+        }
+        
+        .signup{
+       	    background: teal;
+		    z-index: -1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+        }
+        
+        .buttondiv{
+        	display: flex;
+        	justify-content: center;
+			align-items: center;
+			height: 50px;
+        }
+        
+        .button{
+        	border-radius: 60px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="signup" id="signup">
+        <div class="userdiv">
+        	<div>
+        		<h1 style="color:white;text-align:center;">註冊帳號</h1>
+        	</div>
+            <div class="valueDiv"><input id="userId" name="userId" type="text" placeholder="帳號" ></div>
+        	<div class="valueDiv"><input id="pwdId" name="pwdId" type="text" placeholder="密碼" ></div>
+        	<div class="valueDiv"><input id="emailId" name="emailId" type="email" placeholder="E-Mail" ></div>
+        	<div class="valueDiv"><input id="nameId" name="nameId" type="text" placeholder="名字" ></div>
+        	<div class="buttondiv">
+            	<button type="button" value="註冊" onclick="SignUpCheck()">註冊</button>
+            	<a href="index">
+            		<button id="cancelId" >取消</button>
+            	</a>
+        	</div>
+        </div>
+    </div>
+</body>
+<script type="text/javaScript">
+	
+	function SignUpCheck() {
+		//檢查欄位是否為空
+		if(("" != $('#userId').val())
+				&&("" != $('#pwdId').val())
+				&&("" != $('#emailId').val())
+				&&("" != $('#nameId').val()))
+		{
+			$.ajax({
+				type:"POST",
+				contentType: "application/json; charset=utf-8",
+				url:"SignUp.action",  //Spring架構上的名稱，要照JAVA程式
+				data: JSON.stringify(
+						{
+							userId: $('#userId').val() , 
+							pwdId: $('#pwdId').val() , 
+							emailId: $('#emailId').val() ,
+							nameId: $('#nameId').val() 
+						}
+						), //傳送給server的資料，使用json格式
+				datatype:"json",     //自server收到的資訊格式，可以是text或json
+				success: function(data){
+							alert(data);
+						}
+				})
+		    console.log(alert('已傳送資料')); //確認有監聽成功，得到 alert 視窗，內容為已傳送資料
+		}else{
+			alert('欄位不得為空');
+		}
+		
+	}
+	
+	
+</script>
+</html>

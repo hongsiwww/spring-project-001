@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental ToDo List</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;600;900&display=swap">
+    <link rel="stylesheet" href="css/banner-css.css">
+    <link rel="stylesheet" href="css/loginbutton-css.css">
+    <link rel="stylesheet" href="css/info-css.css">
+    <link rel="stylesheet" href="css/loginform-css.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/button-javascript.js"></script>
+    
+
+    <style>
+        
+        /*css reset*/
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Serif TC', serif;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="container">
+            <div class="banner-text">
+                <h1>開始你的環保計畫!</h1>
+                    <small>
+                        全球暖化導致冰山融化這個議題一直圍繞在我們的日常，然而為了地球付諸行動的人們卻少之又少。
+                        <br>
+                        一個人的力量很薄弱，但若是每個人都願意把環保融入生活，就會是很可觀的力量。
+                        <br><br>
+                        無論何時開始都不晚！請加入我們的環保計畫吧！
+                    </small>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="login-button">
+        <a href="javascript:void(0)">點選登入</a>
+    </div>
+
+    <div class="login" id="login" style="display: none;">
+        <div class="closediv">
+            <a href="javascript:void(0)" >點選關閉</a>
+        </div>
+        <div class="userdiv">
+            <!--name是識別網頁上某個控制項的名稱，id是識別網頁上某個 DHTML 物件的名稱，對象是所有的 HTML 元件，多半做動態效果控制-->
+            <!--頁面錨點可用 a + name="???"來寫-->
+            <input id="user" type="text" placeholder="帳號" name="user">
+        </div>
+        <div class="pwddiv">
+            <input id="pwd" type="password" placeholder="密碼" name="pwd">
+        </div>
+        <div class="buttondiv">
+            <div class="logindiv">
+                <a id="login" onclick="SignInCheck()">登入</a>
+            </div>
+            <div class="signindiv">
+                <a id="signin" href="SignUp">註冊</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="information-button" >
+            <a href="#first">︾</a>
+    </div>
+    
+    <div class="par1" id="first">
+        <a href="#second" id="par1_tag">︾</a>
+        <div class="info1">
+            <div class="item1">
+                <img src="https://picsum.photos/300/200?random=2" alt="">
+                <div class="txt">
+                    <a href="javascript:void(0)">減碳</a>
+                    <p id="p1">︾</p>
+                    
+                </div>
+            </div>
+            <div class="item1">
+                <img src="https://picsum.photos/300/200?random=3" alt="">
+                <div class="txt">
+                    <a href="javascript:void(0)">回收</a>
+                    <p id="p2">︾</p>
+                    
+                </div>
+            </div>
+            <div class="item1">
+                <img src="https://picsum.photos/300/200?random=4" alt="">
+                <div class="txt">
+                    <a href="javascript:void(0)">綠色消費</a>
+                    <p id="p3">︾</p>
+                    
+                </div>
+            </div>
+            <div class="item1">
+                <img src="https://picsum.photos/300/200?random=5" alt="">
+                <div class="txt">
+                    <a href="javascript:void(0)">減少垃圾量</a>
+                    <p id="p4">︾</p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="par2" id="second">
+        <a href="#third" id="par2_tag">︾</a>
+        <div class="info2">
+            <div class="item2">
+                <a href="Store" id="par2_a1" target="_blank">每次消費，都是為你想要的世界投票。</a>
+            </div>
+            <div class="item2">
+                <a href="#" id="par2_a2">tbc</a>
+            </div>
+            <div class="item2">
+                <a href="#" id="par2_a3">tbc</a>
+            </div>
+            <div class="item2">
+                <a href="#" id="par2_a4">tbc</a>
+            </div>
+            <div class="item2">
+                <a href="#" id="par2_a5">tbc</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javaScript">
+
+function SignInCheck(){
+	//檢查欄位是否為空
+	if(("" != $('#user').val()) && ("" != $('#pwd').val())){
+		$.ajax({
+				type:"POST",
+				contentType: "application/json; charset=utf-8",
+				url:"SignIn.action",  //Spring架構上的名稱，要照JAVA程式
+				data: JSON.stringify(
+						{
+							userId: $('#user').val() , 
+							pwdId: $('#pwd').val()
+						}
+						), //傳送給server的資料，使用json格式
+				datatype:"json",     //自server收到的資訊格式，可以是text或json
+				success: function(data){
+							alert(data);
+						}
+				})
+	}else{
+		alert('欄位不得為空');
+	}
+}
+</script>
+</html>

@@ -1,0 +1,33 @@
+/*實現右板塊中間的按鈕*/
+.login-button{
+    height: 85vh;
+    width: a;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 57%;
+}
+.login-button a{
+    height: 200px;
+    width: 200px;
+    color: rgb(45, 68, 68);
+    font-size: 45px;
+    border: 0;
+    border-radius:200px;
+    text-decoration: inherit;
+    /*令line-height值等於height，並設置text-align:center*/
+    /*文字才能置中於background-color的圓*/
+    text-align: center;
+    line-height: 200px;
+    background-color: #fff;
+    opacity: 60%;
+    font-weight: 600;
+}
+.login-button a:hover{
+    
+    background-color: #fff;
+    opacity: 100%;
+    font-weight: 600;
+    transition-duration: .5s;
+}

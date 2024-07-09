@@ -1,0 +1,241 @@
+/*實現錨點*/
+.information-button{
+    width: 200px;
+    height: 100px;
+    margin-left: 57%;
+    top: 85vh;
+    text-align: center;
+    position: absolute;
+
+}
+.information-button a::before{
+    display: block;
+    content: "More Info";
+    font-size: 20px;
+    font-weight: 600;
+}
+.information-button a{
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    color:ivory;
+    text-shadow: black 1px 0 10px;
+    text-decoration: inherit;
+    font-weight: 600;
+}
+
+
+/*info第一段*/
+.par1{
+    height: 100vh;
+    width: 100%;
+    top: 100vh;
+    position: relative;
+}
+.info1{
+    width: 100%;    
+    display:flex;
+}
+.par1::before{
+    display: block;
+    text-align: center;
+    content: "關於環保";
+    font-size: 40px;
+    font-weight: 900;
+}
+.item1{
+    height: 100%;
+    width: 25%;
+    position: relative;
+}
+
+.item1 img{
+    vertical-align: middle;
+}
+.item1 .txt{
+    opacity: 0;
+    top: 0;
+    bottom: 2mm;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.611);
+    position: absolute;
+    display: flex;
+    /*拿掉justify-content: center;，a的部分就不會移動了*/
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes grow {
+    0% { border-bottom: none; }
+    100% { border-bottom: 2mm solid darkslategrey; }
+  }
+
+.item1:hover .txt{
+    opacity: 1;
+    transition-duration: 0.5s;
+    
+}
+
+.item1:hover img{
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.txt a{
+    margin-top: 60px;
+    color: rgb(40, 101, 81);
+    text-shadow: black 2px 1px 0;
+    font-size: 35px;
+    text-decoration: inherit;
+    font-weight: 600;
+}
+.txt p{
+    color: dimgrey;
+    font-size: 25px;
+    font-weight: 900;
+}
+.par1 #par1_tag{
+    top: 80vh;
+    margin-left: 48%;
+    font-size: 50px;
+    color:ivory;
+    text-shadow: black 1px 0 10px;
+    text-decoration: inherit;
+    position: relative;
+    font-weight: 600;
+}
+
+/*隱藏在info第一段中*/
+.item1:hover .txt #p1::after{
+    content: "過去一百年來，台灣的年平均氣溫上升了約1.4℃，是全球平均的兩倍。根據聯合國報告指出，溫室效應是最主要的元兇，而溫室效應之所以加劇，是因為人類過度開發的種種活動大量排放二氧化碳所造成的結果。";
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid dimgrey;
+    border-radius: 10px;
+    font-size: 15px;
+    color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.item1:hover .txt #p2::after{
+    content:"相對於「傳統」垃圾遺棄，回收可以節省資源、降低溫室氣體排放。資源回收能預防浪費有潛在利用價值的資源、削減原料消耗，由此減少：能量消耗、空氣污染和水污染。";
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid dimgrey;
+    border-radius: 10px;
+    font-size: 15px;
+    color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.item1:hover .txt #p3::after{
+    content:"指消費者選購產品時，考量到產品對生態環境的衝擊，而選擇對環境傷害較少、甚至是有利的商品，其範圍涵蓋了產品的生產、運輸、行銷、丟棄過程、回收程度，以及產品包裝內含物。";
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid dimgrey;
+    border-radius: 10px;
+    font-size: 15px;
+    color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.item1:hover .txt #p4::after{
+    content:"如果生活在地球上的每個人的人均消耗量和一個普通的美國老百姓一樣多，我們需要四個地球才足以維持我們的消耗需求。遺憾的是，我們只有一個資源有限的地球。";
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid dimgrey;
+    border-radius: 10px;
+    font-size: 15px;
+    color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+/*info第二段*/
+
+.par2{
+    height: 100vh;
+    width: 100%;
+    top: 100vh;
+    position: relative;
+}
+
+.par2::before{
+    display: block;
+    text-align: center;
+    content: "你所不知道的環保";
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.par2 #par2_tag{
+    top: 80vh;
+    margin-left: 48%;
+    font-size: 50px;
+    color:ivory;
+    text-shadow: black 1px 0 10px;
+    text-decoration: inherit;
+    position: relative;
+    font-weight: 600;
+}
+
+.info2{
+    display: block;
+    margin-left: 30%;
+    text-emphasis: left;
+}
+
+.item2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 500px;
+    background: linear-gradient(to right,white, teal);
+}
+
+.item2 a{
+    text-decoration: inherit;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.item2 a:hover{
+    font-style: italic;
+    color: white;
+    transition: 1s ease-in-out;
+}
+
+.item2::before{
+    content: "";
+    
+    position: absolute;
+    left: 35%;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left:  15px solid teal;
+    display: inline-block;
+}
